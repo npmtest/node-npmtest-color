@@ -1,7 +1,10 @@
-# test coverage for  [color (v1.0.3)](https://github.com/qix-/color#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-color.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-color) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-color.svg)](https://travis-ci.org/npmtest/node-npmtest-color)
+# npmtest-color
+
+#### test coverage for  [color (v1.0.3)](https://github.com/qix-/color#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-color.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-color) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-color.svg)](https://travis-ci.org/npmtest/node-npmtest-color)
+
 #### Color conversion and manipulation with CSS string support
 
-[![NPM](https://nodei.co/npm/color.png?downloads=true)](https://www.npmjs.com/package/color)
+[![NPM](https://nodei.co/npm/color.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/color)
 
 | git-branch : | [alpha](https://github.com/npmtest/node-npmtest-color/tree/alpha)|
 |--:|:--|
@@ -9,11 +12,17 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-color/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-color/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-color/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-color/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-color/build/screenCapture.buildCustomOrg.browser.coverage.html.png)](https://npmtest.github.io/node-npmtest-color/build/coverage.html/index.html)
+- [https://npmtest.github.io/node-npmtest-color/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-color/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-color/build/screenCapture.buildCustomOrg.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmtest%252Fnode-npmtest-color%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-color/build/test-report.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-color/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-color/build/coverage.html/index.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-color/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-color%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-color/build/apidoc.html)
+- [https://npmtest.github.io/node-npmtest-color/build/test-report.html](https://npmtest.github.io/node-npmtest-color/build/test-report.html)
+
+[![test-report](https://npmtest.github.io/node-npmtest-color/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-color/build/test-report.html)
+
+- [https://npmdoc.github.io/node-npmdoc-color/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-color/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-color/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-color/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-color/build/screenCapture.npmPackageListing.svg)
 
@@ -63,21 +72,17 @@
     "license": "MIT",
     "maintainers": [
         {
-            "name": "harth",
-            "email": "fayearthur@gmail.com"
+            "name": "harth"
         },
         {
-            "name": "moox",
-            "email": "m@moox.io"
+            "name": "moox"
         },
         {
-            "name": "qix",
-            "email": "i.am.qix@gmail.com"
+            "name": "qix"
         }
     ],
     "name": "color",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/qix-/color.git"
