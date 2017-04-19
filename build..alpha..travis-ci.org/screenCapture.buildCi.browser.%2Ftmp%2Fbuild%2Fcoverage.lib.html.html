@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-color/color/index.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-color/node_modules/color/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-color">npmtest-color (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-color/color/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-color/node_modules/color/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">13.06% <small>(29 / 222)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-color/color/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-color/node_modules/color/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -1199,178 +1197,178 @@ Object.keys(convert).forEach(function (model) {
 &nbsp;
 var limiters = {};
 &nbsp;
-<span class="fstat-no" title="function not covered" >function Color(obj, model) {</span>
-<span class="cstat-no" title="statement not covered" >	if (!(this instanceof Color)) {</span>
-<span class="cstat-no" title="statement not covered" >		return new Color(obj, model);</span>
+<span class="fstat-no" title="function not covered">function Color(obj, model) {</span>
+<span class="cstat-no" title="statement not covered">	if (!(this instanceof Color)) {</span>
+<span class="cstat-no" title="statement not covered">		return new Color(obj, model);</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (model &amp;&amp; model in skippedModels) {</span>
-<span class="cstat-no" title="statement not covered" >		model = null;</span>
+<span class="cstat-no" title="statement not covered">	if (model &amp;&amp; model in skippedModels) {</span>
+<span class="cstat-no" title="statement not covered">		model = null;</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (model &amp;&amp; !(model in convert)) {</span>
-<span class="cstat-no" title="statement not covered" >		throw new Error('Unknown model: ' + model);</span>
+<span class="cstat-no" title="statement not covered">	if (model &amp;&amp; !(model in convert)) {</span>
+<span class="cstat-no" title="statement not covered">		throw new Error('Unknown model: ' + model);</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	var i;</span>
-<span class="cstat-no" title="statement not covered" >	var channels;</span>
+<span class="cstat-no" title="statement not covered">	var i;</span>
+<span class="cstat-no" title="statement not covered">	var channels;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (!obj) {</span>
-<span class="cstat-no" title="statement not covered" >		this.model = 'rgb';</span>
-<span class="cstat-no" title="statement not covered" >		this.color = [0, 0, 0];</span>
-<span class="cstat-no" title="statement not covered" >		this.valpha = 1;</span>
-	} else <span class="cstat-no" title="statement not covered" >if (obj instanceof Color) {</span>
-<span class="cstat-no" title="statement not covered" >		this.model = obj.model;</span>
-<span class="cstat-no" title="statement not covered" >		this.color = obj.color.slice();</span>
-<span class="cstat-no" title="statement not covered" >		this.valpha = obj.valpha;</span>
-	} else <span class="cstat-no" title="statement not covered" >if (typeof obj === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >		var result = colorString.get(obj);</span>
-<span class="cstat-no" title="statement not covered" >		if (result === null) {</span>
-<span class="cstat-no" title="statement not covered" >			throw new Error('Unable to parse color from string: ' + obj);</span>
+<span class="cstat-no" title="statement not covered">	if (!obj) {</span>
+<span class="cstat-no" title="statement not covered">		this.model = 'rgb';</span>
+<span class="cstat-no" title="statement not covered">		this.color = [0, 0, 0];</span>
+<span class="cstat-no" title="statement not covered">		this.valpha = 1;</span>
+	} else <span class="cstat-no" title="statement not covered">if (obj instanceof Color) {</span>
+<span class="cstat-no" title="statement not covered">		this.model = obj.model;</span>
+<span class="cstat-no" title="statement not covered">		this.color = obj.color.slice();</span>
+<span class="cstat-no" title="statement not covered">		this.valpha = obj.valpha;</span>
+	} else <span class="cstat-no" title="statement not covered">if (typeof obj === 'string') {</span>
+<span class="cstat-no" title="statement not covered">		var result = colorString.get(obj);</span>
+<span class="cstat-no" title="statement not covered">		if (result === null) {</span>
+<span class="cstat-no" title="statement not covered">			throw new Error('Unable to parse color from string: ' + obj);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		this.model = result.model;</span>
-<span class="cstat-no" title="statement not covered" >		channels = convert[this.model].channels;</span>
-<span class="cstat-no" title="statement not covered" >		this.color = result.value.slice(0, channels);</span>
-<span class="cstat-no" title="statement not covered" >		this.valpha = typeof result.value[channels] === 'number' ? result.value[channels] : 1;</span>
-	} else <span class="cstat-no" title="statement not covered" >if (obj.length) {</span>
-<span class="cstat-no" title="statement not covered" >		this.model = model || 'rgb';</span>
-<span class="cstat-no" title="statement not covered" >		channels = convert[this.model].channels;</span>
-<span class="cstat-no" title="statement not covered" >		var newArr = _slice.call(obj, 0, channels);</span>
-<span class="cstat-no" title="statement not covered" >		this.color = zeroArray(newArr, channels);</span>
-<span class="cstat-no" title="statement not covered" >		this.valpha = typeof obj[channels] === 'number' ? obj[channels] : 1;</span>
-	} else <span class="cstat-no" title="statement not covered" >if (typeof obj === 'number') {</span>
+<span class="cstat-no" title="statement not covered">		this.model = result.model;</span>
+<span class="cstat-no" title="statement not covered">		channels = convert[this.model].channels;</span>
+<span class="cstat-no" title="statement not covered">		this.color = result.value.slice(0, channels);</span>
+<span class="cstat-no" title="statement not covered">		this.valpha = typeof result.value[channels] === 'number' ? result.value[channels] : 1;</span>
+	} else <span class="cstat-no" title="statement not covered">if (obj.length) {</span>
+<span class="cstat-no" title="statement not covered">		this.model = model || 'rgb';</span>
+<span class="cstat-no" title="statement not covered">		channels = convert[this.model].channels;</span>
+<span class="cstat-no" title="statement not covered">		var newArr = _slice.call(obj, 0, channels);</span>
+<span class="cstat-no" title="statement not covered">		this.color = zeroArray(newArr, channels);</span>
+<span class="cstat-no" title="statement not covered">		this.valpha = typeof obj[channels] === 'number' ? obj[channels] : 1;</span>
+	} else <span class="cstat-no" title="statement not covered">if (typeof obj === 'number') {</span>
 		// this is always RGB - can be converted later on.
-<span class="cstat-no" title="statement not covered" >		obj &amp;= 0xFFFFFF;</span>
-<span class="cstat-no" title="statement not covered" >		this.model = 'rgb';</span>
-<span class="cstat-no" title="statement not covered" >		this.color = [</span>
+<span class="cstat-no" title="statement not covered">		obj &amp;= 0xFFFFFF;</span>
+<span class="cstat-no" title="statement not covered">		this.model = 'rgb';</span>
+<span class="cstat-no" title="statement not covered">		this.color = [</span>
 			(obj &gt;&gt; 16) &amp; 0xFF,
 			(obj &gt;&gt; 8) &amp; 0xFF,
 			obj &amp; 0xFF
 		];
-<span class="cstat-no" title="statement not covered" >		this.valpha = 1;</span>
+<span class="cstat-no" title="statement not covered">		this.valpha = 1;</span>
 	} else {
-<span class="cstat-no" title="statement not covered" >		this.valpha = 1;</span>
+<span class="cstat-no" title="statement not covered">		this.valpha = 1;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var keys = Object.keys(obj);</span>
-<span class="cstat-no" title="statement not covered" >		if ('alpha' in obj) {</span>
-<span class="cstat-no" title="statement not covered" >			keys.splice(keys.indexOf('alpha'), 1);</span>
-<span class="cstat-no" title="statement not covered" >			this.valpha = typeof obj.alpha === 'number' ? obj.alpha : 0;</span>
+<span class="cstat-no" title="statement not covered">		var keys = Object.keys(obj);</span>
+<span class="cstat-no" title="statement not covered">		if ('alpha' in obj) {</span>
+<span class="cstat-no" title="statement not covered">			keys.splice(keys.indexOf('alpha'), 1);</span>
+<span class="cstat-no" title="statement not covered">			this.valpha = typeof obj.alpha === 'number' ? obj.alpha : 0;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var hashedKeys = keys.sort().join('');</span>
-<span class="cstat-no" title="statement not covered" >		if (!(hashedKeys in hashedModelKeys)) {</span>
-<span class="cstat-no" title="statement not covered" >			throw new Error('Unable to parse color from object: ' + JSON.stringify(obj));</span>
+<span class="cstat-no" title="statement not covered">		var hashedKeys = keys.sort().join('');</span>
+<span class="cstat-no" title="statement not covered">		if (!(hashedKeys in hashedModelKeys)) {</span>
+<span class="cstat-no" title="statement not covered">			throw new Error('Unable to parse color from object: ' + JSON.stringify(obj));</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		this.model = hashedModelKeys[hashedKeys];</span>
+<span class="cstat-no" title="statement not covered">		this.model = hashedModelKeys[hashedKeys];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var labels = convert[this.model].labels;</span>
-<span class="cstat-no" title="statement not covered" >		var color = [];</span>
-<span class="cstat-no" title="statement not covered" >		for (i = 0; i &lt; labels.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >			color.push(obj[labels[i]]);</span>
+<span class="cstat-no" title="statement not covered">		var labels = convert[this.model].labels;</span>
+<span class="cstat-no" title="statement not covered">		var color = [];</span>
+<span class="cstat-no" title="statement not covered">		for (i = 0; i &lt; labels.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">			color.push(obj[labels[i]]);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		this.color = zeroArray(color);</span>
+<span class="cstat-no" title="statement not covered">		this.color = zeroArray(color);</span>
 	}
 &nbsp;
 	// perform limitations (clamping, etc.)
-<span class="cstat-no" title="statement not covered" >	if (limiters[this.model]) {</span>
-<span class="cstat-no" title="statement not covered" >		channels = convert[this.model].channels;</span>
-<span class="cstat-no" title="statement not covered" >		for (i = 0; i &lt; channels; i++) {</span>
-<span class="cstat-no" title="statement not covered" >			var limit = limiters[this.model][i];</span>
-<span class="cstat-no" title="statement not covered" >			if (limit) {</span>
-<span class="cstat-no" title="statement not covered" >				this.color[i] = limit(this.color[i]);</span>
+<span class="cstat-no" title="statement not covered">	if (limiters[this.model]) {</span>
+<span class="cstat-no" title="statement not covered">		channels = convert[this.model].channels;</span>
+<span class="cstat-no" title="statement not covered">		for (i = 0; i &lt; channels; i++) {</span>
+<span class="cstat-no" title="statement not covered">			var limit = limiters[this.model][i];</span>
+<span class="cstat-no" title="statement not covered">			if (limit) {</span>
+<span class="cstat-no" title="statement not covered">				this.color[i] = limit(this.color[i]);</span>
 			}
 		}
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	this.valpha = Math.max(0, Math.min(1, this.valpha));</span>
+<span class="cstat-no" title="statement not covered">	this.valpha = Math.max(0, Math.min(1, this.valpha));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (Object.freeze) {</span>
-<span class="cstat-no" title="statement not covered" >		Object.freeze(this);</span>
+<span class="cstat-no" title="statement not covered">	if (Object.freeze) {</span>
+<span class="cstat-no" title="statement not covered">		Object.freeze(this);</span>
 	}
 }
 &nbsp;
 Color.prototype = {
-	toString: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		return this.string();</span>
+	toString: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		return this.string();</span>
 	},
 &nbsp;
-	toJSON: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		return this[this.model]();</span>
+	toJSON: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		return this[this.model]();</span>
 	},
 &nbsp;
-	string: <span class="fstat-no" title="function not covered" >function (places) {</span>
-<span class="cstat-no" title="statement not covered" >		var self = this.model in colorString.to ? this : this.rgb();</span>
-<span class="cstat-no" title="statement not covered" >		self = self.round(typeof places === 'number' ? places : 1);</span>
-<span class="cstat-no" title="statement not covered" >		var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);</span>
-<span class="cstat-no" title="statement not covered" >		return colorString.to[self.model](args);</span>
+	string: <span class="fstat-no" title="function not covered">function (places) {</span>
+<span class="cstat-no" title="statement not covered">		var self = this.model in colorString.to ? this : this.rgb();</span>
+<span class="cstat-no" title="statement not covered">		self = self.round(typeof places === 'number' ? places : 1);</span>
+<span class="cstat-no" title="statement not covered">		var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);</span>
+<span class="cstat-no" title="statement not covered">		return colorString.to[self.model](args);</span>
 	},
 &nbsp;
-	percentString: <span class="fstat-no" title="function not covered" >function (places) {</span>
-<span class="cstat-no" title="statement not covered" >		var self = this.rgb().round(typeof places === 'number' ? places : 1);</span>
-<span class="cstat-no" title="statement not covered" >		var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);</span>
-<span class="cstat-no" title="statement not covered" >		return colorString.to.rgb.percent(args);</span>
+	percentString: <span class="fstat-no" title="function not covered">function (places) {</span>
+<span class="cstat-no" title="statement not covered">		var self = this.rgb().round(typeof places === 'number' ? places : 1);</span>
+<span class="cstat-no" title="statement not covered">		var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);</span>
+<span class="cstat-no" title="statement not covered">		return colorString.to.rgb.percent(args);</span>
 	},
 &nbsp;
-	array: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		return this.valpha === 1 ? this.color.slice() : this.color.concat(this.valpha);</span>
+	array: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		return this.valpha === 1 ? this.color.slice() : this.color.concat(this.valpha);</span>
 	},
 &nbsp;
-	object: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		var result = {};</span>
-<span class="cstat-no" title="statement not covered" >		var channels = convert[this.model].channels;</span>
-<span class="cstat-no" title="statement not covered" >		var labels = convert[this.model].labels;</span>
+	object: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		var result = {};</span>
+<span class="cstat-no" title="statement not covered">		var channels = convert[this.model].channels;</span>
+<span class="cstat-no" title="statement not covered">		var labels = convert[this.model].labels;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		for (var i = 0; i &lt; channels; i++) {</span>
-<span class="cstat-no" title="statement not covered" >			result[labels[i]] = this.color[i];</span>
+<span class="cstat-no" title="statement not covered">		for (var i = 0; i &lt; channels; i++) {</span>
+<span class="cstat-no" title="statement not covered">			result[labels[i]] = this.color[i];</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (this.valpha !== 1) {</span>
-<span class="cstat-no" title="statement not covered" >			result.alpha = this.valpha;</span>
+<span class="cstat-no" title="statement not covered">		if (this.valpha !== 1) {</span>
+<span class="cstat-no" title="statement not covered">			result.alpha = this.valpha;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return result;</span>
+<span class="cstat-no" title="statement not covered">		return result;</span>
 	},
 &nbsp;
-	unitArray: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		var rgb = this.rgb().color;</span>
-<span class="cstat-no" title="statement not covered" >		rgb[0] /= 255;</span>
-<span class="cstat-no" title="statement not covered" >		rgb[1] /= 255;</span>
-<span class="cstat-no" title="statement not covered" >		rgb[2] /= 255;</span>
+	unitArray: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		var rgb = this.rgb().color;</span>
+<span class="cstat-no" title="statement not covered">		rgb[0] /= 255;</span>
+<span class="cstat-no" title="statement not covered">		rgb[1] /= 255;</span>
+<span class="cstat-no" title="statement not covered">		rgb[2] /= 255;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (this.valpha !== 1) {</span>
-<span class="cstat-no" title="statement not covered" >			rgb.push(this.valpha);</span>
+<span class="cstat-no" title="statement not covered">		if (this.valpha !== 1) {</span>
+<span class="cstat-no" title="statement not covered">			rgb.push(this.valpha);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return rgb;</span>
+<span class="cstat-no" title="statement not covered">		return rgb;</span>
 	},
 &nbsp;
-	unitObject: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		var rgb = this.rgb().object();</span>
-<span class="cstat-no" title="statement not covered" >		rgb.r /= 255;</span>
-<span class="cstat-no" title="statement not covered" >		rgb.g /= 255;</span>
-<span class="cstat-no" title="statement not covered" >		rgb.b /= 255;</span>
+	unitObject: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		var rgb = this.rgb().object();</span>
+<span class="cstat-no" title="statement not covered">		rgb.r /= 255;</span>
+<span class="cstat-no" title="statement not covered">		rgb.g /= 255;</span>
+<span class="cstat-no" title="statement not covered">		rgb.b /= 255;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (this.valpha !== 1) {</span>
-<span class="cstat-no" title="statement not covered" >			rgb.alpha = this.valpha;</span>
+<span class="cstat-no" title="statement not covered">		if (this.valpha !== 1) {</span>
+<span class="cstat-no" title="statement not covered">			rgb.alpha = this.valpha;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return rgb;</span>
+<span class="cstat-no" title="statement not covered">		return rgb;</span>
 	},
 &nbsp;
-	round: <span class="fstat-no" title="function not covered" >function (places) {</span>
-<span class="cstat-no" title="statement not covered" >		places = Math.max(places || 0, 0);</span>
-<span class="cstat-no" title="statement not covered" >		return new Color(this.color.map(roundToPlace(places)).concat(this.valpha), this.model);</span>
+	round: <span class="fstat-no" title="function not covered">function (places) {</span>
+<span class="cstat-no" title="statement not covered">		places = Math.max(places || 0, 0);</span>
+<span class="cstat-no" title="statement not covered">		return new Color(this.color.map(roundToPlace(places)).concat(this.valpha), this.model);</span>
 	},
 &nbsp;
-	alpha: <span class="fstat-no" title="function not covered" >function (val) {</span>
-<span class="cstat-no" title="statement not covered" >		if (arguments.length) {</span>
-<span class="cstat-no" title="statement not covered" >			return new Color(this.color.concat(Math.max(0, Math.min(1, val))), this.model);</span>
+	alpha: <span class="fstat-no" title="function not covered">function (val) {</span>
+<span class="cstat-no" title="statement not covered">		if (arguments.length) {</span>
+<span class="cstat-no" title="statement not covered">			return new Color(this.color.concat(Math.max(0, Math.min(1, val))), this.model);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return this.valpha;</span>
+<span class="cstat-no" title="statement not covered">		return this.valpha;</span>
 	},
 &nbsp;
 	// rgb
@@ -1378,7 +1376,7 @@ Color.prototype = {
 	green: getset('rgb', 1, maxfn(255)),
 	blue: getset('rgb', 2, maxfn(255)),
 &nbsp;
-	hue: getset(['hsl', 'hsv', 'hsl', 'hwb', 'hcg'], 0, <span class="fstat-no" title="function not covered" >function (val) {</span> <span class="cstat-no" title="statement not covered" >return ((val % 360) + 360) % 360; </span>}), // eslint-disable-line brace-style
+	hue: getset(['hsl', 'hsv', 'hsl', 'hwb', 'hcg'], 0, <span class="fstat-no" title="function not covered">function (val) {</span> <span class="cstat-no" title="statement not covered">return ((val % 360) + 360) % 360; </span>}), // eslint-disable-line brace-style
 &nbsp;
 	saturationl: getset('hsl', 1, maxfn(100)),
 	lightness: getset('hsl', 2, maxfn(100)),
@@ -1405,154 +1403,154 @@ Color.prototype = {
 	a: getset('lab', 1),
 	b: getset('lab', 2),
 &nbsp;
-	keyword: <span class="fstat-no" title="function not covered" >function (val) {</span>
-<span class="cstat-no" title="statement not covered" >		if (arguments.length) {</span>
-<span class="cstat-no" title="statement not covered" >			return new Color(val);</span>
+	keyword: <span class="fstat-no" title="function not covered">function (val) {</span>
+<span class="cstat-no" title="statement not covered">		if (arguments.length) {</span>
+<span class="cstat-no" title="statement not covered">			return new Color(val);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return convert[this.model].keyword(this.color);</span>
+<span class="cstat-no" title="statement not covered">		return convert[this.model].keyword(this.color);</span>
 	},
 &nbsp;
-	hex: <span class="fstat-no" title="function not covered" >function (val) {</span>
-<span class="cstat-no" title="statement not covered" >		if (arguments.length) {</span>
-<span class="cstat-no" title="statement not covered" >			return new Color(val);</span>
+	hex: <span class="fstat-no" title="function not covered">function (val) {</span>
+<span class="cstat-no" title="statement not covered">		if (arguments.length) {</span>
+<span class="cstat-no" title="statement not covered">			return new Color(val);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return colorString.to.hex(this.rgb().round().color);</span>
+<span class="cstat-no" title="statement not covered">		return colorString.to.hex(this.rgb().round().color);</span>
 	},
 &nbsp;
-	rgbNumber: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		var rgb = this.rgb().color;</span>
-<span class="cstat-no" title="statement not covered" >		return ((rgb[0] &amp; 0xFF) &lt;&lt; 16) | ((rgb[1] &amp; 0xFF) &lt;&lt; 8) | (rgb[2] &amp; 0xFF);</span>
+	rgbNumber: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		var rgb = this.rgb().color;</span>
+<span class="cstat-no" title="statement not covered">		return ((rgb[0] &amp; 0xFF) &lt;&lt; 16) | ((rgb[1] &amp; 0xFF) &lt;&lt; 8) | (rgb[2] &amp; 0xFF);</span>
 	},
 &nbsp;
-	luminosity: <span class="fstat-no" title="function not covered" >function () {</span>
+	luminosity: <span class="fstat-no" title="function not covered">function () {</span>
 		// http://www.w3.org/TR/WCAG20/#relativeluminancedef
-<span class="cstat-no" title="statement not covered" >		var rgb = this.rgb().color;</span>
+<span class="cstat-no" title="statement not covered">		var rgb = this.rgb().color;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var lum = [];</span>
-<span class="cstat-no" title="statement not covered" >		for (var i = 0; i &lt; rgb.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >			var chan = rgb[i] / 255;</span>
-<span class="cstat-no" title="statement not covered" >			lum[i] = (chan &lt;= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055), 2.4);</span>
+<span class="cstat-no" title="statement not covered">		var lum = [];</span>
+<span class="cstat-no" title="statement not covered">		for (var i = 0; i &lt; rgb.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">			var chan = rgb[i] / 255;</span>
+<span class="cstat-no" title="statement not covered">			lum[i] = (chan &lt;= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055), 2.4);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];</span>
+<span class="cstat-no" title="statement not covered">		return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];</span>
 	},
 &nbsp;
-	contrast: <span class="fstat-no" title="function not covered" >function (color2) {</span>
+	contrast: <span class="fstat-no" title="function not covered">function (color2) {</span>
 		// http://www.w3.org/TR/WCAG20/#contrast-ratiodef
-<span class="cstat-no" title="statement not covered" >		var lum1 = this.luminosity();</span>
-<span class="cstat-no" title="statement not covered" >		var lum2 = color2.luminosity();</span>
+<span class="cstat-no" title="statement not covered">		var lum1 = this.luminosity();</span>
+<span class="cstat-no" title="statement not covered">		var lum2 = color2.luminosity();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (lum1 &gt; lum2) {</span>
-<span class="cstat-no" title="statement not covered" >			return (lum1 + 0.05) / (lum2 + 0.05);</span>
+<span class="cstat-no" title="statement not covered">		if (lum1 &gt; lum2) {</span>
+<span class="cstat-no" title="statement not covered">			return (lum1 + 0.05) / (lum2 + 0.05);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return (lum2 + 0.05) / (lum1 + 0.05);</span>
+<span class="cstat-no" title="statement not covered">		return (lum2 + 0.05) / (lum1 + 0.05);</span>
 	},
 &nbsp;
-	level: <span class="fstat-no" title="function not covered" >function (color2) {</span>
-<span class="cstat-no" title="statement not covered" >		var contrastRatio = this.contrast(color2);</span>
-<span class="cstat-no" title="statement not covered" >		if (contrastRatio &gt;= 7.1) {</span>
-<span class="cstat-no" title="statement not covered" >			return 'AAA';</span>
+	level: <span class="fstat-no" title="function not covered">function (color2) {</span>
+<span class="cstat-no" title="statement not covered">		var contrastRatio = this.contrast(color2);</span>
+<span class="cstat-no" title="statement not covered">		if (contrastRatio &gt;= 7.1) {</span>
+<span class="cstat-no" title="statement not covered">			return 'AAA';</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return (contrastRatio &gt;= 4.5) ? 'AA' : '';</span>
+<span class="cstat-no" title="statement not covered">		return (contrastRatio &gt;= 4.5) ? 'AA' : '';</span>
 	},
 &nbsp;
-	dark: <span class="fstat-no" title="function not covered" >function () {</span>
+	dark: <span class="fstat-no" title="function not covered">function () {</span>
 		// YIQ equation from http://24ways.org/2010/calculating-color-contrast
-<span class="cstat-no" title="statement not covered" >		var rgb = this.rgb().color;</span>
-<span class="cstat-no" title="statement not covered" >		var yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;</span>
-<span class="cstat-no" title="statement not covered" >		return yiq &lt; 128;</span>
+<span class="cstat-no" title="statement not covered">		var rgb = this.rgb().color;</span>
+<span class="cstat-no" title="statement not covered">		var yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;</span>
+<span class="cstat-no" title="statement not covered">		return yiq &lt; 128;</span>
 	},
 &nbsp;
-	light: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		return !this.dark();</span>
+	light: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		return !this.dark();</span>
 	},
 &nbsp;
-	negate: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		var rgb = this.rgb();</span>
-<span class="cstat-no" title="statement not covered" >		for (var i = 0; i &lt; 3; i++) {</span>
-<span class="cstat-no" title="statement not covered" >			rgb.color[i] = 255 - rgb.color[i];</span>
+	negate: <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		var rgb = this.rgb();</span>
+<span class="cstat-no" title="statement not covered">		for (var i = 0; i &lt; 3; i++) {</span>
+<span class="cstat-no" title="statement not covered">			rgb.color[i] = 255 - rgb.color[i];</span>
 		}
-<span class="cstat-no" title="statement not covered" >		return rgb;</span>
+<span class="cstat-no" title="statement not covered">		return rgb;</span>
 	},
 &nbsp;
-	lighten: <span class="fstat-no" title="function not covered" >function (ratio) {</span>
-<span class="cstat-no" title="statement not covered" >		var hsl = this.hsl();</span>
-<span class="cstat-no" title="statement not covered" >		hsl.color[2] += hsl.color[2] * ratio;</span>
-<span class="cstat-no" title="statement not covered" >		return hsl;</span>
+	lighten: <span class="fstat-no" title="function not covered">function (ratio) {</span>
+<span class="cstat-no" title="statement not covered">		var hsl = this.hsl();</span>
+<span class="cstat-no" title="statement not covered">		hsl.color[2] += hsl.color[2] * ratio;</span>
+<span class="cstat-no" title="statement not covered">		return hsl;</span>
 	},
 &nbsp;
-	darken: <span class="fstat-no" title="function not covered" >function (ratio) {</span>
-<span class="cstat-no" title="statement not covered" >		var hsl = this.hsl();</span>
-<span class="cstat-no" title="statement not covered" >		hsl.color[2] -= hsl.color[2] * ratio;</span>
-<span class="cstat-no" title="statement not covered" >		return hsl;</span>
+	darken: <span class="fstat-no" title="function not covered">function (ratio) {</span>
+<span class="cstat-no" title="statement not covered">		var hsl = this.hsl();</span>
+<span class="cstat-no" title="statement not covered">		hsl.color[2] -= hsl.color[2] * ratio;</span>
+<span class="cstat-no" title="statement not covered">		return hsl;</span>
 	},
 &nbsp;
-	saturate: <span class="fstat-no" title="function not covered" >function (ratio) {</span>
-<span class="cstat-no" title="statement not covered" >		var hsl = this.hsl();</span>
-<span class="cstat-no" title="statement not covered" >		hsl.color[1] += hsl.color[1] * ratio;</span>
-<span class="cstat-no" title="statement not covered" >		return hsl;</span>
+	saturate: <span class="fstat-no" title="function not covered">function (ratio) {</span>
+<span class="cstat-no" title="statement not covered">		var hsl = this.hsl();</span>
+<span class="cstat-no" title="statement not covered">		hsl.color[1] += hsl.color[1] * ratio;</span>
+<span class="cstat-no" title="statement not covered">		return hsl;</span>
 	},
 &nbsp;
-	desaturate: <span class="fstat-no" title="function not covered" >function (ratio) {</span>
-<span class="cstat-no" title="statement not covered" >		var hsl = this.hsl();</span>
-<span class="cstat-no" title="statement not covered" >		hsl.color[1] -= hsl.color[1] * ratio;</span>
-<span class="cstat-no" title="statement not covered" >		return hsl;</span>
+	desaturate: <span class="fstat-no" title="function not covered">function (ratio) {</span>
+<span class="cstat-no" title="statement not covered">		var hsl = this.hsl();</span>
+<span class="cstat-no" title="statement not covered">		hsl.color[1] -= hsl.color[1] * ratio;</span>
+<span class="cstat-no" title="statement not covered">		return hsl;</span>
 	},
 &nbsp;
-	whiten: <span class="fstat-no" title="function not covered" >function (ratio) {</span>
-<span class="cstat-no" title="statement not covered" >		var hwb = this.hwb();</span>
-<span class="cstat-no" title="statement not covered" >		hwb.color[1] += hwb.color[1] * ratio;</span>
-<span class="cstat-no" title="statement not covered" >		return hwb;</span>
+	whiten: <span class="fstat-no" title="function not covered">function (ratio) {</span>
+<span class="cstat-no" title="statement not covered">		var hwb = this.hwb();</span>
+<span class="cstat-no" title="statement not covered">		hwb.color[1] += hwb.color[1] * ratio;</span>
+<span class="cstat-no" title="statement not covered">		return hwb;</span>
 	},
 &nbsp;
-	blacken: <span class="fstat-no" title="function not covered" >function (ratio) {</span>
-<span class="cstat-no" title="statement not covered" >		var hwb = this.hwb();</span>
-<span class="cstat-no" title="statement not covered" >		hwb.color[2] += hwb.color[2] * ratio;</span>
-<span class="cstat-no" title="statement not covered" >		return hwb;</span>
+	blacken: <span class="fstat-no" title="function not covered">function (ratio) {</span>
+<span class="cstat-no" title="statement not covered">		var hwb = this.hwb();</span>
+<span class="cstat-no" title="statement not covered">		hwb.color[2] += hwb.color[2] * ratio;</span>
+<span class="cstat-no" title="statement not covered">		return hwb;</span>
 	},
 &nbsp;
-	grayscale: <span class="fstat-no" title="function not covered" >function () {</span>
+	grayscale: <span class="fstat-no" title="function not covered">function () {</span>
 		// http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
-<span class="cstat-no" title="statement not covered" >		var rgb = this.rgb().color;</span>
-<span class="cstat-no" title="statement not covered" >		var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;</span>
-<span class="cstat-no" title="statement not covered" >		return Color.rgb(val, val, val);</span>
+<span class="cstat-no" title="statement not covered">		var rgb = this.rgb().color;</span>
+<span class="cstat-no" title="statement not covered">		var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;</span>
+<span class="cstat-no" title="statement not covered">		return Color.rgb(val, val, val);</span>
 	},
 &nbsp;
-	fade: <span class="fstat-no" title="function not covered" >function (ratio) {</span>
-<span class="cstat-no" title="statement not covered" >		return this.alpha(this.valpha - (this.valpha * ratio));</span>
+	fade: <span class="fstat-no" title="function not covered">function (ratio) {</span>
+<span class="cstat-no" title="statement not covered">		return this.alpha(this.valpha - (this.valpha * ratio));</span>
 	},
 &nbsp;
-	opaquer: <span class="fstat-no" title="function not covered" >function (ratio) {</span>
-<span class="cstat-no" title="statement not covered" >		return this.alpha(this.valpha + (this.valpha * ratio));</span>
+	opaquer: <span class="fstat-no" title="function not covered">function (ratio) {</span>
+<span class="cstat-no" title="statement not covered">		return this.alpha(this.valpha + (this.valpha * ratio));</span>
 	},
 &nbsp;
-	rotate: <span class="fstat-no" title="function not covered" >function (degrees) {</span>
-<span class="cstat-no" title="statement not covered" >		var hsl = this.hsl();</span>
-<span class="cstat-no" title="statement not covered" >		var hue = hsl.color[0];</span>
-<span class="cstat-no" title="statement not covered" >		hue = (hue + degrees) % 360;</span>
-<span class="cstat-no" title="statement not covered" >		hue = hue &lt; 0 ? 360 + hue : hue;</span>
-<span class="cstat-no" title="statement not covered" >		hsl.color[0] = hue;</span>
-<span class="cstat-no" title="statement not covered" >		return hsl;</span>
+	rotate: <span class="fstat-no" title="function not covered">function (degrees) {</span>
+<span class="cstat-no" title="statement not covered">		var hsl = this.hsl();</span>
+<span class="cstat-no" title="statement not covered">		var hue = hsl.color[0];</span>
+<span class="cstat-no" title="statement not covered">		hue = (hue + degrees) % 360;</span>
+<span class="cstat-no" title="statement not covered">		hue = hue &lt; 0 ? 360 + hue : hue;</span>
+<span class="cstat-no" title="statement not covered">		hsl.color[0] = hue;</span>
+<span class="cstat-no" title="statement not covered">		return hsl;</span>
 	},
 &nbsp;
-	mix: <span class="fstat-no" title="function not covered" >function (mixinColor, weight) {</span>
+	mix: <span class="fstat-no" title="function not covered">function (mixinColor, weight) {</span>
 		// ported from sass implementation in C
 		// https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
-<span class="cstat-no" title="statement not covered" >		var color1 = this.rgb();</span>
-<span class="cstat-no" title="statement not covered" >		var color2 = mixinColor.rgb();</span>
-<span class="cstat-no" title="statement not covered" >		var p = weight === undefined ? 0.5 : weight;</span>
+<span class="cstat-no" title="statement not covered">		var color1 = this.rgb();</span>
+<span class="cstat-no" title="statement not covered">		var color2 = mixinColor.rgb();</span>
+<span class="cstat-no" title="statement not covered">		var p = weight === undefined ? 0.5 : weight;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var w = 2 * p - 1;</span>
-<span class="cstat-no" title="statement not covered" >		var a = color1.alpha() - color2.alpha();</span>
+<span class="cstat-no" title="statement not covered">		var w = 2 * p - 1;</span>
+<span class="cstat-no" title="statement not covered">		var a = color1.alpha() - color2.alpha();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var w1 = (((w * a === -1) ? w : (w + a) / (1 + w * a)) + 1) / 2.0;</span>
-<span class="cstat-no" title="statement not covered" >		var w2 = 1 - w1;</span>
+<span class="cstat-no" title="statement not covered">		var w1 = (((w * a === -1) ? w : (w + a) / (1 + w * a)) + 1) / 2.0;</span>
+<span class="cstat-no" title="statement not covered">		var w2 = 1 - w1;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return Color.rgb(</span>
+<span class="cstat-no" title="statement not covered">		return Color.rgb(</span>
 				w1 * color1.red() + w2 * color2.red(),
 				w1 * color1.green() + w2 * color2.green(),
 				w1 * color1.blue() + w2 * color2.blue(),
@@ -1569,35 +1567,35 @@ Object.keys(convert).forEach(function (model) {
 	var channels = convert[model].channels;
 &nbsp;
 	// conversion methods
-	Color.prototype[model] = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		if (this.model === model) {</span>
-<span class="cstat-no" title="statement not covered" >			return new Color(this);</span>
+	Color.prototype[model] = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">		if (this.model === model) {</span>
+<span class="cstat-no" title="statement not covered">			return new Color(this);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (arguments.length) {</span>
-<span class="cstat-no" title="statement not covered" >			return new Color(arguments, model);</span>
+<span class="cstat-no" title="statement not covered">		if (arguments.length) {</span>
+<span class="cstat-no" title="statement not covered">			return new Color(arguments, model);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var newAlpha = typeof arguments[channels] === 'number' ? channels : this.valpha;</span>
-<span class="cstat-no" title="statement not covered" >		return new Color(assertArray(convert[this.model][model].raw(this.color)).concat(newAlpha), model);</span>
+<span class="cstat-no" title="statement not covered">		var newAlpha = typeof arguments[channels] === 'number' ? channels : this.valpha;</span>
+<span class="cstat-no" title="statement not covered">		return new Color(assertArray(convert[this.model][model].raw(this.color)).concat(newAlpha), model);</span>
 	};
 &nbsp;
 	// 'static' construction methods
-	Color[model] = <span class="fstat-no" title="function not covered" >function (color) {</span>
-<span class="cstat-no" title="statement not covered" >		if (typeof color === 'number') {</span>
-<span class="cstat-no" title="statement not covered" >			color = zeroArray(_slice.call(arguments), channels);</span>
+	Color[model] = <span class="fstat-no" title="function not covered">function (color) {</span>
+<span class="cstat-no" title="statement not covered">		if (typeof color === 'number') {</span>
+<span class="cstat-no" title="statement not covered">			color = zeroArray(_slice.call(arguments), channels);</span>
 		}
-<span class="cstat-no" title="statement not covered" >		return new Color(color, model);</span>
+<span class="cstat-no" title="statement not covered">		return new Color(color, model);</span>
 	};
 });
 &nbsp;
-<span class="fstat-no" title="function not covered" >function roundTo(num, places) {</span>
-<span class="cstat-no" title="statement not covered" >	return Number(num.toFixed(places));</span>
+<span class="fstat-no" title="function not covered">function roundTo(num, places) {</span>
+<span class="cstat-no" title="statement not covered">	return Number(num.toFixed(places));</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function roundToPlace(places) {</span>
-<span class="cstat-no" title="statement not covered" >	return <span class="fstat-no" title="function not covered" >function (num) {</span></span>
-<span class="cstat-no" title="statement not covered" >		return roundTo(num, places);</span>
+<span class="fstat-no" title="function not covered">function roundToPlace(places) {</span>
+<span class="cstat-no" title="statement not covered">	return <span class="fstat-no" title="function not covered">function (num) {</span></span>
+<span class="cstat-no" title="statement not covered">		return roundTo(num, places);</span>
 	};
 }
 &nbsp;
@@ -1610,55 +1608,56 @@ function getset(model, channel, modifier) {
 &nbsp;
 	model = model[0];
 &nbsp;
-	return <span class="fstat-no" title="function not covered" >function (val) {</span>
-<span class="cstat-no" title="statement not covered" >		var result;</span>
+	return <span class="fstat-no" title="function not covered">function (val) {</span>
+<span class="cstat-no" title="statement not covered">		var result;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (arguments.length) {</span>
-<span class="cstat-no" title="statement not covered" >			if (modifier) {</span>
-<span class="cstat-no" title="statement not covered" >				val = modifier(val);</span>
+<span class="cstat-no" title="statement not covered">		if (arguments.length) {</span>
+<span class="cstat-no" title="statement not covered">			if (modifier) {</span>
+<span class="cstat-no" title="statement not covered">				val = modifier(val);</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			result = this[model]();</span>
-<span class="cstat-no" title="statement not covered" >			result.color[channel] = val;</span>
-<span class="cstat-no" title="statement not covered" >			return result;</span>
+<span class="cstat-no" title="statement not covered">			result = this[model]();</span>
+<span class="cstat-no" title="statement not covered">			result.color[channel] = val;</span>
+<span class="cstat-no" title="statement not covered">			return result;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		result = this[model]().color[channel];</span>
-<span class="cstat-no" title="statement not covered" >		if (modifier) {</span>
-<span class="cstat-no" title="statement not covered" >			result = modifier(result);</span>
+<span class="cstat-no" title="statement not covered">		result = this[model]().color[channel];</span>
+<span class="cstat-no" title="statement not covered">		if (modifier) {</span>
+<span class="cstat-no" title="statement not covered">			result = modifier(result);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return result;</span>
+<span class="cstat-no" title="statement not covered">		return result;</span>
 	};
 }
 &nbsp;
 function maxfn(max) {
-	return <span class="fstat-no" title="function not covered" >function (v) {</span>
-<span class="cstat-no" title="statement not covered" >		return Math.max(0, Math.min(max, v));</span>
+	return <span class="fstat-no" title="function not covered">function (v) {</span>
+<span class="cstat-no" title="statement not covered">		return Math.max(0, Math.min(max, v));</span>
 	};
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function assertArray(val) {</span>
-<span class="cstat-no" title="statement not covered" >	return Array.isArray(val) ? val : [val];</span>
+<span class="fstat-no" title="function not covered">function assertArray(val) {</span>
+<span class="cstat-no" title="statement not covered">	return Array.isArray(val) ? val : [val];</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function zeroArray(arr, length) {</span>
-<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >		if (typeof arr[i] !== 'number') {</span>
-<span class="cstat-no" title="statement not covered" >			arr[i] = 0;</span>
+<span class="fstat-no" title="function not covered">function zeroArray(arr, length) {</span>
+<span class="cstat-no" title="statement not covered">	for (var i = 0; i &lt; length; i++) {</span>
+<span class="cstat-no" title="statement not covered">		if (typeof arr[i] !== 'number') {</span>
+<span class="cstat-no" title="statement not covered">			arr[i] = 0;</span>
 		}
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return arr;</span>
+<span class="cstat-no" title="statement not covered">	return arr;</span>
 }
 &nbsp;
 module.exports = Color;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 20:55:54 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 19 2017 08:54:43 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
