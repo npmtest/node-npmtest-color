@@ -1,6 +1,6 @@
 # npmtest-color
 
-#### test coverage for  [color (v1.0.3)](https://github.com/qix-/color#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-color.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-color) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-color.svg)](https://travis-ci.org/npmtest/node-npmtest-color)
+#### basic test coverage for  [color (v1.0.3)](https://github.com/qix-/color#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-color.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-color) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-color.svg)](https://travis-ci.org/npmtest/node-npmtest-color)
 
 #### Color conversion and manipulation with CSS string support
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-color/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-color/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-color/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-color/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-color/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-color/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-color/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-color/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-color/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-color/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-color/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-color/build/coverage.html/index.html)
 
@@ -97,7 +97,8 @@
             "no-cond-assign": 0,
             "new-cap": 0
         }
-    }
+    },
+    "bin": {}
 }
 ```
 
